@@ -1,18 +1,30 @@
-[gd_scene load_steps=23 format=3 uid="uid://db8usssyonk6l"]
+[gd_scene load_steps=36 format=3 uid="uid://db8usssyonk6l"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_ig65q"]
 [ext_resource type="Texture2D" uid="uid://wj3xaqrb3rxg" path="res://Assets/Characters/PurpleDemon/Idle/frame0000.png" id="2_eqlwm"]
 [ext_resource type="Texture2D" uid="uid://d3hc86uxhpesr" path="res://Assets/Characters/PurpleDemon/Idle/frame0003.png" id="2_gq4m6"]
+[ext_resource type="Texture2D" uid="uid://b2coko8plagkj" path="res://Assets/Characters/PurpleDemon/Run/frame0000.png" id="3_qgii5"]
 [ext_resource type="Texture2D" uid="uid://dm3dnrorjst3g" path="res://Assets/Characters/PurpleDemon/Idle/frame0001.png" id="4_4jc3u"]
+[ext_resource type="Texture2D" uid="uid://cpvke1okdtitk" path="res://Assets/Characters/PurpleDemon/Run/frame0001.png" id="4_dbly0"]
+[ext_resource type="Texture2D" uid="uid://b0qpn2dg5kx8j" path="res://Assets/Characters/PurpleDemon/Run/frame0002.png" id="5_gm6lw"]
 [ext_resource type="Texture2D" uid="uid://yvmv02vtfo5i" path="res://Assets/Characters/PurpleDemon/Idle/frame0002.png" id="5_m10ka"]
+[ext_resource type="Texture2D" uid="uid://dj44qp2hge8od" path="res://Assets/Characters/PurpleDemon/Run/frame0003.png" id="6_0i37o"]
 [ext_resource type="Texture2D" uid="uid://veqofdcplwk3" path="res://Assets/Characters/PurpleDemon/Idle/frame0004.png" id="6_6jrdp"]
 [ext_resource type="Texture2D" uid="uid://cmdks4i6e4ldt" path="res://Assets/Characters/PurpleDemon/Idle/frame0005.png" id="7_7mi8v"]
+[ext_resource type="Texture2D" uid="uid://deyuiy02clnar" path="res://Assets/Characters/PurpleDemon/Run/frame0004.png" id="7_30a6g"]
 [ext_resource type="Texture2D" uid="uid://sdtkqxu80vi7" path="res://Assets/Characters/PurpleDemon/Idle/frame0006.png" id="8_a1prj"]
+[ext_resource type="Texture2D" uid="uid://fk3squ07fgli" path="res://Assets/Characters/PurpleDemon/Run/frame0005.png" id="8_dg16h"]
+[ext_resource type="Texture2D" uid="uid://cnnmlt2t1vhf5" path="res://Assets/Characters/PurpleDemon/Run/frame0006.png" id="9_co20y"]
 [ext_resource type="Texture2D" uid="uid://6g520anixdc0" path="res://Assets/Characters/PurpleDemon/Idle/frame0007.png" id="9_e6lwf"]
+[ext_resource type="Texture2D" uid="uid://bgiueivrxakyp" path="res://Assets/Characters/PurpleDemon/Run/frame0007.png" id="10_kjy6q"]
 [ext_resource type="Texture2D" uid="uid://gwmd5endbwle" path="res://Assets/Characters/PurpleDemon/Idle/frame0008.png" id="10_n0xkr"]
+[ext_resource type="Texture2D" uid="uid://de81qojyuh0ry" path="res://Assets/Characters/PurpleDemon/Run/frame0008.png" id="11_4stj0"]
 [ext_resource type="Texture2D" uid="uid://dmd48jsh4qja6" path="res://Assets/Characters/PurpleDemon/Idle/frame0009.png" id="11_e73ep"]
+[ext_resource type="Texture2D" uid="uid://c8bbniy57j171" path="res://Assets/Characters/PurpleDemon/Run/frame0009.png" id="12_rjpfb"]
 [ext_resource type="Texture2D" uid="uid://3yo8tt68orqw" path="res://Assets/Characters/PurpleDemon/Idle/frame0010.png" id="12_tet2j"]
 [ext_resource type="Texture2D" uid="uid://bucf14g0bjdvq" path="res://Assets/Characters/PurpleDemon/Idle/frame0011.png" id="13_0o2lx"]
+[ext_resource type="Texture2D" uid="uid://chqp8xuomjbyu" path="res://Assets/Characters/PurpleDemon/Run/frame0010.png" id="13_mnjvm"]
+[ext_resource type="Texture2D" uid="uid://bewfqn8i20neq" path="res://Assets/Characters/PurpleDemon/Run/frame0011.png" id="14_kmqkf"]
 [ext_resource type="Texture2D" uid="uid://cutwb510x2mox" path="res://Assets/Characters/PurpleDemon/Idle/frame0012.png" id="14_uoteu"]
 [ext_resource type="Texture2D" uid="uid://kujfy40ykorw" path="res://Assets/Characters/PurpleDemon/Idle/frame0013.png" id="15_e55qj"]
 [ext_resource type="Texture2D" uid="uid://ckckcvkhpi248" path="res://Assets/Characters/PurpleDemon/Idle/frame0014.png" id="16_5ctvv"]
@@ -20,6 +32,22 @@
 [ext_resource type="Texture2D" uid="uid://bm6604pbs8u74" path="res://Assets/Characters/PurpleDemon/Idle/frame0016.png" id="18_rumtv"]
 [ext_resource type="Texture2D" uid="uid://dffwjfd326duy" path="res://Assets/Characters/PurpleDemon/Idle/frame0017.png" id="19_g5rrr"]
 [ext_resource type="Texture2D" uid="uid://cr2acrmhsj8k1" path="res://Assets/Characters/PurpleDemon/Idle/frame0018.png" id="20_q813i"]
+
+[sub_resource type="Animation" id="Animation_vbkji"]
+resource_name = "Run"
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_qgii5"), ExtResource("4_dbly0"), ExtResource("5_gm6lw"), ExtResource("6_0i37o"), ExtResource("7_30a6g"), ExtResource("8_dg16h"), ExtResource("9_co20y"), ExtResource("10_kjy6q"), ExtResource("11_4stj0"), ExtResource("12_rjpfb"), ExtResource("13_mnjvm"), ExtResource("14_kmqkf")]
+}
 
 [sub_resource type="Animation" id="Animation_1fl5g"]
 resource_name = "Idle"
@@ -40,14 +68,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5knq7"]
 _data = {
-"Idle": SubResource("Animation_1fl5g")
+"Idle_side": SubResource("Animation_1fl5g"),
+"Run_Side": SubResource("Animation_vbkji")
 }
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_ig65q")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("2_gq4m6")
+texture = ExtResource("2_eqlwm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
