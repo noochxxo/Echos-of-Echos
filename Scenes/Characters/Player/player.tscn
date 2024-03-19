@@ -1,6 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://db8usssyonk6l"]
+[gd_scene load_steps=23 format=3 uid="uid://db8usssyonk6l"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_ig65q"]
+[ext_resource type="Texture2D" uid="uid://wj3xaqrb3rxg" path="res://Assets/Characters/PurpleDemon/Idle/frame0000.png" id="2_eqlwm"]
+[ext_resource type="Texture2D" uid="uid://d3hc86uxhpesr" path="res://Assets/Characters/PurpleDemon/Idle/frame0003.png" id="2_gq4m6"]
+[ext_resource type="Texture2D" uid="uid://dm3dnrorjst3g" path="res://Assets/Characters/PurpleDemon/Idle/frame0001.png" id="4_4jc3u"]
+[ext_resource type="Texture2D" uid="uid://yvmv02vtfo5i" path="res://Assets/Characters/PurpleDemon/Idle/frame0002.png" id="5_m10ka"]
+[ext_resource type="Texture2D" uid="uid://veqofdcplwk3" path="res://Assets/Characters/PurpleDemon/Idle/frame0004.png" id="6_6jrdp"]
+[ext_resource type="Texture2D" uid="uid://cmdks4i6e4ldt" path="res://Assets/Characters/PurpleDemon/Idle/frame0005.png" id="7_7mi8v"]
+[ext_resource type="Texture2D" uid="uid://sdtkqxu80vi7" path="res://Assets/Characters/PurpleDemon/Idle/frame0006.png" id="8_a1prj"]
+[ext_resource type="Texture2D" uid="uid://6g520anixdc0" path="res://Assets/Characters/PurpleDemon/Idle/frame0007.png" id="9_e6lwf"]
+[ext_resource type="Texture2D" uid="uid://gwmd5endbwle" path="res://Assets/Characters/PurpleDemon/Idle/frame0008.png" id="10_n0xkr"]
+[ext_resource type="Texture2D" uid="uid://dmd48jsh4qja6" path="res://Assets/Characters/PurpleDemon/Idle/frame0009.png" id="11_e73ep"]
+[ext_resource type="Texture2D" uid="uid://3yo8tt68orqw" path="res://Assets/Characters/PurpleDemon/Idle/frame0010.png" id="12_tet2j"]
+[ext_resource type="Texture2D" uid="uid://bucf14g0bjdvq" path="res://Assets/Characters/PurpleDemon/Idle/frame0011.png" id="13_0o2lx"]
+[ext_resource type="Texture2D" uid="uid://cutwb510x2mox" path="res://Assets/Characters/PurpleDemon/Idle/frame0012.png" id="14_uoteu"]
+[ext_resource type="Texture2D" uid="uid://kujfy40ykorw" path="res://Assets/Characters/PurpleDemon/Idle/frame0013.png" id="15_e55qj"]
+[ext_resource type="Texture2D" uid="uid://ckckcvkhpi248" path="res://Assets/Characters/PurpleDemon/Idle/frame0014.png" id="16_5ctvv"]
+[ext_resource type="Texture2D" uid="uid://c21fwgjby5pkr" path="res://Assets/Characters/PurpleDemon/Idle/frame0015.png" id="17_2dkwo"]
+[ext_resource type="Texture2D" uid="uid://bm6604pbs8u74" path="res://Assets/Characters/PurpleDemon/Idle/frame0016.png" id="18_rumtv"]
+[ext_resource type="Texture2D" uid="uid://dffwjfd326duy" path="res://Assets/Characters/PurpleDemon/Idle/frame0017.png" id="19_g5rrr"]
+[ext_resource type="Texture2D" uid="uid://cr2acrmhsj8k1" path="res://Assets/Characters/PurpleDemon/Idle/frame0018.png" id="20_q813i"]
 
-[node name="Player" type="Node3D"]
+[sub_resource type="Animation" id="Animation_1fl5g"]
+resource_name = "Idle"
+loop_mode = 1
+step = 0.0526316
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0526316, 0.105263, 0.157895, 0.210526, 0.263158, 0.315789, 0.368421, 0.421053, 0.473684, 0.526316, 0.578947, 0.631579, 0.684211, 0.736842, 0.789474, 0.842105, 0.894737, 0.947368),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_eqlwm"), ExtResource("4_4jc3u"), ExtResource("5_m10ka"), ExtResource("2_gq4m6"), ExtResource("6_6jrdp"), ExtResource("7_7mi8v"), ExtResource("8_a1prj"), ExtResource("9_e6lwf"), ExtResource("10_n0xkr"), ExtResource("11_e73ep"), ExtResource("12_tet2j"), ExtResource("13_0o2lx"), ExtResource("14_uoteu"), ExtResource("15_e55qj"), ExtResource("16_5ctvv"), ExtResource("17_2dkwo"), ExtResource("18_rumtv"), ExtResource("19_g5rrr"), ExtResource("20_q813i")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5knq7"]
+_data = {
+"Idle": SubResource("Animation_1fl5g")
+}
+
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_ig65q")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_gq4m6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5knq7")
+}
