@@ -58,3 +58,4 @@ Toy train by Jair Trejo [CC-BY] (https://creativecommons.org/licenses/by/3.0/) v
 
 Teddy Bear Head by Hayden Lee [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/3lZqpjJzKwq)
 
+Grass by Quaternius (https://poly.pizza/m/UGTOzcO3P2)

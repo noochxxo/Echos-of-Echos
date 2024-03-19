@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb1oe47rh5pp3"
-path.s3tc="res://.godot/imported/Stone Walkway_texture.jpg-5d7956272d3ba1a3c64c50e7d988469f.s3tc.ctex"
+uid="uid://baa710xq7c5db"
+path.s3tc="res://.godot/imported/Trees_NormalTree_Leaves.png-d95b935d8ae13cb7c85061830172f3e8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Environment/Stone Walkway_texture.jpg"
-dest_files=["res://.godot/imported/Stone Walkway_texture.jpg-5d7956272d3ba1a3c64c50e7d988469f.s3tc.ctex"]
+source_file="res://Assets/Environment/Trees/Trees_NormalTree_Leaves.png"
+dest_files=["res://.godot/imported/Trees_NormalTree_Leaves.png-d95b935d8ae13cb7c85061830172f3e8.s3tc.ctex"]
 
 [params]
 
