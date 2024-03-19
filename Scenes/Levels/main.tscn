@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhcjcgflgwc30"]
+[gd_scene load_steps=3 format=3 uid="uid://dhcjcgflgwc30"]
+
+[ext_resource type="PackedScene" uid="uid://6qb15vv3o8dk" path="res://Assets/Environment/Ground/Stone Walkway.glb" id="1_gc6w8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhpba"]
 albedo_color = Color(0.156863, 0.52549, 0.364706, 1)
@@ -6,7 +8,7 @@ albedo_color = Color(0.156863, 0.52549, 0.364706, 1)
 [node name="Main" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 use_collision = true
 size = Vector3(100, 0.5, 100)
 material = SubResource("StandardMaterial3D_rhpba")
@@ -14,3 +16,145 @@ material = SubResource("StandardMaterial3D_rhpba")
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.356, 0.75, 0)
 use_collision = true
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="FloorGridMap" type="GridMap" parent="Environment"]
+
+[node name="Walkway" type="Node" parent="Environment"]
+
+[node name="StoneWalkway" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+
+[node name="StoneWalkway2" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="StoneWalkway3" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="StoneWalkway4" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="StoneWalkway5" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="StoneWalkway6" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="StoneWalkway7" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="StoneWalkway8" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="StoneWalkway9" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="StoneWalkway10" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="StoneWalkway11" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="StoneWalkway13" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
+
+[node name="StoneWalkway14" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+
+[node name="StoneWalkway15" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="StoneWalkway16" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+
+[node name="StoneWalkway17" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+
+[node name="StoneWalkway18" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="StoneWalkway19" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="StoneWalkway20" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="StoneWalkway21" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="StoneWalkway22" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="StoneWalkway23" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="StoneWalkway24" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 0)
+
+[node name="StoneWalkway25" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 0)
+
+[node name="StoneWalkway26" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+
+[node name="StoneWalkway27" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, 0)
+
+[node name="StoneWalkway28" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0)
+
+[node name="StoneWalkway29" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, 0)
+
+[node name="StoneWalkway30" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0)
+
+[node name="StoneWalkway31" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+
+[node name="StoneWalkway32" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
+
+[node name="StoneWalkway33" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
+
+[node name="StoneWalkway34" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="StoneWalkway35" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="StoneWalkway36" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 0)
+
+[node name="StoneWalkway37" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+
+[node name="StoneWalkway38" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="StoneWalkway39" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+
+[node name="StoneWalkway40" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 0)
+
+[node name="StoneWalkway41" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="StoneWalkway42" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 0)
+
+[node name="StoneWalkway43" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="StoneWalkway44" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 0)
+
+[node name="StoneWalkway45" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
+
+[node name="StoneWalkway12" parent="Environment/Walkway" instance=ExtResource("1_gc6w8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+
+[node name="WalkwayPlants" type="Node" parent="Environment"]
