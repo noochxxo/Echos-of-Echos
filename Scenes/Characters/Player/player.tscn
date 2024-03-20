@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://db8usssyonk6l"]
+[gd_scene load_steps=85 format=3 uid="uid://db8usssyonk6l"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/Player.cs" id="1_ig65q"]
 [ext_resource type="Texture2D" uid="uid://43g75t2exyq4" path="res://Assets/Characters/PurpleDemon/Attacks/Attack_1/frame0000.png" id="2_0c6od"]
@@ -74,6 +74,25 @@
 [ext_resource type="Texture2D" uid="uid://cnrbhty5b1p7b" path="res://Assets/Characters/PurpleDemon/Attacks/Attack_1/frame0009.png" id="72_yc7rn"]
 [ext_resource type="Texture2D" uid="uid://cq2ud488b73lb" path="res://Assets/Characters/PurpleDemon/Attacks/Attack_1/frame0010.png" id="73_1lvv1"]
 [ext_resource type="Texture2D" uid="uid://briu0kyr0t1fv" path="res://Assets/Characters/PurpleDemon/Attacks/Attack_1/frame0011.png" id="74_e61ro"]
+[ext_resource type="PackedScene" uid="uid://bggikpx6r13nr" path="res://Scenes/Characters/state_machine.tscn" id="75_821x2"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerIdleState.cs" id="76_1u8rk"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/PlayerMoveState.cs" id="77_cnsi3"]
+
+[sub_resource type="Animation" id="Animation_66qlu"]
+resource_name = "Attack_1"
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_0c6od"), ExtResource("64_a13vt"), ExtResource("65_8cpor"), ExtResource("66_mwgel"), ExtResource("67_8n6dy"), ExtResource("68_lrjp7"), ExtResource("69_utsav"), ExtResource("70_hrpdh"), ExtResource("71_yilmc"), ExtResource("72_yc7rn"), ExtResource("73_1lvv1"), ExtResource("74_e61ro")]
+}
 
 [sub_resource type="Animation" id="Animation_yplr8"]
 resource_name = "Idle_Back"
@@ -143,23 +162,6 @@ tracks/0/keys = {
 "values": [ExtResource("2_6hqaj"), ExtResource("22_a5vku"), ExtResource("23_yueej"), ExtResource("24_3yyxv"), ExtResource("25_hc4c5"), ExtResource("26_5j6fo"), ExtResource("27_qhlmp"), ExtResource("28_mv8dk"), ExtResource("29_13k0h"), ExtResource("30_31fqx"), ExtResource("31_yde74"), ExtResource("32_h1ug8")]
 }
 
-[sub_resource type="Animation" id="Animation_66qlu"]
-resource_name = "Attack_1"
-loop_mode = 1
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_0c6od"), ExtResource("64_a13vt"), ExtResource("65_8cpor"), ExtResource("66_mwgel"), ExtResource("67_8n6dy"), ExtResource("68_lrjp7"), ExtResource("69_utsav"), ExtResource("70_hrpdh"), ExtResource("71_yilmc"), ExtResource("72_yc7rn"), ExtResource("73_1lvv1"), ExtResource("74_e61ro")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5knq7"]
 _data = {
 "Attack_1": SubResource("Animation_66qlu"),
@@ -169,13 +171,34 @@ _data = {
 "Walk_Side": SubResource("Animation_vbkji")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1setc"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("AnimationPlayerNode", "SpriteNode", "StateMachineNode", "Collider")]
 script = ExtResource("1_ig65q")
+AnimationPlayerNode = NodePath("AnimationPlayer")
+SpriteNode = NodePath("Sprite3D")
+StateMachineNode = NodePath("StateMachine")
+Collider = NodePath("CollisionShape3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("2_0c6od")
+transform = Transform3D(-6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, 0.430584, 0.187889, 0)
+texture = ExtResource("44_cjxu8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5knq7")
 }
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("currentState", "states") instance=ExtResource("75_821x2")]
+currentState = NodePath("IdleState")
+states = [NodePath("IdleState"), NodePath("MoveState")]
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("76_1u8rk")
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("77_cnsi3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+shape = SubResource("CapsuleShape3D_1setc")

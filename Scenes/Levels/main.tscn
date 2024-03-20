@@ -1,11 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhcjcgflgwc30"]
+[gd_scene load_steps=7 format=3 uid="uid://dhcjcgflgwc30"]
 
 [ext_resource type="PackedScene" uid="uid://6qb15vv3o8dk" path="res://Assets/Environment/Ground/Stone Walkway.glb" id="1_gc6w8"]
+[ext_resource type="PackedScene" uid="uid://db8usssyonk6l" path="res://Scenes/Characters/Player/player.tscn" id="2_cvcok"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nusun"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_1x836"]
+sky_material = SubResource("ProceduralSkyMaterial_nusun")
+
+[sub_resource type="Environment" id="Environment_dcusb"]
+background_mode = 2
+sky = SubResource("Sky_1x836")
+tonemap_mode = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhpba"]
 albedo_color = Color(0.156863, 0.52549, 0.364706, 1)
 
 [node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dcusb")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
@@ -158,3 +178,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
 
 [node name="WalkwayPlants" type="Node" parent="Environment"]
+
+[node name="Player" parent="." instance=ExtResource("2_cvcok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61586, 1.01385, 0)
+
+[node name="Node3D" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, -3.72529e-08, 0, 1, 0, 3.72529e-08, 0, 1, 1.71262, 0, 3.21277)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Node3D"]
+transform = Transform3D(0.995734, 0, 0.0922662, 0, 1, 0, -0.0922662, 0, 0.995734, 0.274868, 0.450265, -1.49306)
